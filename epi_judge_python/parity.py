@@ -17,21 +17,12 @@ def compute_lookup_table(l: int) -> dict[str, int]:
         parity.
     """
 
-    def _compute_parity(x: int) -> int:
-        """Computes the parity of a word."""
-        result = 0
-        while x:
-            result ^= 1
-            x &= x - 1
-        return result
-
     max_num = 2**l
-    curr = 0
-    table = {}
+    table = {0: 0}
 
-    while curr < max_num:
-        table[curr] = _compute_parity(curr)
-        curr += 1
+    for i in range(1, max_num):
+        # Count the number of 1s then modulo 2 to get odd or even.
+        table[i] = (table[i >> 1] + (i & 1)) % 2
 
     return table
 
@@ -74,23 +65,21 @@ def parity(x: int) -> int:
     # i)  Compute the lookup table.
     # ii) Use look up table by calculating the parity of each non-overlapping
     #     group
-    # bitmask = 0xFFFF  # F is 1111
-    # return (
-    #     LOOKUP_TABLE[x & bitmask]
-    #     ^ LOOKUP_TABLE[(x >> MASK_SIZE) & bitmask]
-    #     ^ LOOKUP_TABLE[(x >> (2 * MASK_SIZE)) & bitmask]
-    #     ^ LOOKUP_TABLE[(x >> (3 * MASK_SIZE)) & bitmask]
-    # )
+    bitmask = 0xFFFF  # F is 1111
+    return (
+        LOOKUP_TABLE[x & bitmask]
+        ^ LOOKUP_TABLE[(x >> MASK_SIZE) & bitmask]
+        ^ LOOKUP_TABLE[(x >> (2 * MASK_SIZE)) & bitmask]
+        ^ LOOKUP_TABLE[(x >> (3 * MASK_SIZE)) & bitmask]
+    )
 
     # 4) Use associativity - O(log(n)) where n is the length of the word
     # The XOR of a group of bits is its parity.
-    half = int(MAX_SIZE / 2)
-    while half > 0:
-        x ^= x >> half
-        half = floor(half / 2)
-        print(half)
-
-    return x & 0x1
+    # half = int(MAX_SIZE / 2)
+    # while half > 0:
+    #     x ^= x >> half
+    #     half = floor(half / 2)
+    # return x & 0x1
 
 
 if __name__ == "__main__":
