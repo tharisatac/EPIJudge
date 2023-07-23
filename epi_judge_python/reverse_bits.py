@@ -27,16 +27,16 @@ def _reverse_hash_table(bit_size: int) -> Dict[int, int]:
     """Build up a hash table of a 'bit_size' int and its reverse value"""
     # Either 0,1,3,7,15,31,63
 
-    # 1) 2^n+1 -> +1 because the last value is exluded in a range.
+    # 1) Normal.
     hash_table = {}
     for i in range((2 ** (bit_size))):
-        # if i not in hash_table:
-        x = i
-        for j in range(int(bit_size / 2)):
-            x = swap_bits(x, j, bit_size - 1 - j)
+        if i not in hash_table:
+            x = i
+            for j in range(int(bit_size / 2)):
+                x = swap_bits(x, j, bit_size - 1 - j)
 
-        hash_table[i] = x
-        # hash_table[x] = i
+            hash_table[i] = x
+            hash_table[x] = i
 
     return hash_table
 
