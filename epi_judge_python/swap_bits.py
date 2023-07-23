@@ -13,7 +13,11 @@ def swap_bits(x, i, j):
 
     # No need to swap if the values are the same.
     if not ((x >> i) & 1 == (x >> j) & 1):
-        # Flip the indexed bit. This is done using an XOR.
+        # 1 << i | 1 << j: The | operator performs a bitwise OR operation
+        # between the results of the left shift operations from steps 1 and 2.
+        # It combines the bits of the two numbers, resulting in a new binary
+        # number. For example, if i is 3 and j is 2, 1 << 3 | 1 << 2 would
+        # result in the binary number 1100, which is 12 in decimal.
         x ^= 1 << i | 1 << j
     return x
 

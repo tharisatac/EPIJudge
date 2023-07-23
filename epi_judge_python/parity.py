@@ -1,6 +1,6 @@
 from test_framework import generic_test
 
-""" 4.1.1 Computing the Parity of a Word """
+""" 4.1 Computing the Parity of a Word """
 
 from math import floor
 
@@ -21,7 +21,7 @@ def compute_lookup_table(l: int) -> dict[str, int]:
     table = {0: 0}
 
     for i in range(1, max_num):
-        # Count the number of 1s then modulo 2 to get odd or even.
+        # 6) Count the number of 1s then modulo 2 to get odd or even.
         table[i] = (table[i >> 1] + (i & 1)) % 2
 
     return table
