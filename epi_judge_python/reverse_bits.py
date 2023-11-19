@@ -29,7 +29,7 @@ def _reverse_hash_table(bit_size: int) -> Dict[int, int]:
 
     # 1) Normal.
     hash_table = {}
-    for i in range((2 ** (bit_size))):
+    for i in range(int(2 ** (bit_size)) / 2):
         if i not in hash_table:
             x = i
             for j in range(int(bit_size / 2)):
