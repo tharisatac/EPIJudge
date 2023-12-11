@@ -7,11 +7,11 @@ def power(x: float, y: int) -> float:
 
     Explanation:
 
-    Base Case: If the exponent 𝑦 is 0, return 1 because any number ra 
+    Base Case: If the exponent 𝑦 is 0, return 1 because any number r 
     power of 0 is 1.
-    Even Exponent: If 𝑦 is even, compute 𝑥^(𝑦/2) and square the resuis 
+    Even Exponent: If 𝑦 is even, compute 𝑥^(𝑦/2) and square the resis 
     because 𝑥^𝑦 = (𝑥^(𝑦/2))^2. In bitwise-terms, if it ends in 0.
-    Odd Exponent: If 𝑦 is odd, compute 𝑥^((𝑦-1)/2), square the nd 
+    Odd Exponent: If 𝑦 is odd, compute 𝑥^((𝑦-1)/2), square thend 
     multiply by 𝑥. This is because 𝑥^𝑦 = 𝑥 × (𝑥^((𝑦-1)/2))^2. In bitwise-terms,
     if it ends in 1.
 
@@ -23,6 +23,7 @@ def power(x: float, y: int) -> float:
 
     if y < 0:
         x = 1.0 / x
+        # y is negative. Update it to its positive counterpart
         power = -y
 
     while power:
