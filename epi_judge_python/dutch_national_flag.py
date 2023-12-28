@@ -14,6 +14,8 @@ def dutch_flag_partition(pivot_index: int, A: List[int]) -> None:
 
     # 1) A naive approach would be to utilize 3 arrays.
     # 2) A better approach, is to do the change in place using pointers.
+    # O(n) time complexity and O(1) space complexity as the change is done in
+    # place
     # Initialize pointers.
     low = 0
     high = len(A) - 1
