@@ -11,7 +11,7 @@ def buy_and_sell_stock_twice(prices: List[float]) -> float:
     # 1) The best solutiion to this is to take advantage of the solution in
     # '5.6 buy_and_sell_stock.py'.
 
-    # First buy and sell profits.
+    # First buy and sell profits. This is O(n)
     min_price = float("inf")
     max_profit = 0
     first_buy_sell_profits = [0.0] * len(prices)
@@ -21,7 +21,8 @@ def buy_and_sell_stock_twice(prices: List[float]) -> float:
         max_profit = max(profit, max_profit)
         first_buy_sell_profits[i] = max_profit
 
-    # Second buy and sell profits. i.e. the max profit from Day i onwards.
+    # Second buy and sell profits. i.e. the max profit from Day i onwards. This
+    # is O(n)
     max_price_so_far = float("-inf")
     max_total_profit = 0
     for j, price in reversed(list(enumerate(prices))):

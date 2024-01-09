@@ -292,7 +292,7 @@ problem_mapping = {
                 "total": 203
             },
             "Python: alternating_array.py": {
-                "passed": 0,
+                "passed": 203,
                 "total": 203
             }
         },
@@ -306,7 +306,7 @@ problem_mapping = {
                 "total": 24
             },
             "Python: prime_sieve.py": {
-                "passed": 0,
+                "passed": 24,
                 "total": 24
             }
         },
@@ -320,7 +320,7 @@ problem_mapping = {
                 "total": 101
             },
             "Python: apply_permutation.py": {
-                "passed": 0,
+                "passed": 101,
                 "total": 101
             }
         },
