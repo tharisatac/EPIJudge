@@ -476,7 +476,7 @@ problem_mapping = {
                 "total": 10000
             },
             "Python: is_string_palindromic.py": {
-                "passed": 0,
+                "passed": 10000,
                 "total": 10000
             }
         },
@@ -560,7 +560,7 @@ problem_mapping = {
                 "total": 103
             },
             "Python: reverse_words.py": {
-                "passed": 0,
+                "passed": 103,
                 "total": 103
             }
         },
