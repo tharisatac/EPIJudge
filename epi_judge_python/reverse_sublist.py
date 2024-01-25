@@ -25,6 +25,17 @@ def reverse_sublist(L: ListNode, start: int, finish: int) -> Optional[ListNode]:
         # 11 -> 7 -> 5 -> 9 -> 2
         sublist_head.next = temp_node
 
+    """ 
+    11 -> 7 -> 5 -> 9 -> 2
+    
+    # Set temp_node as 9.
+    # Set 5 to point to 2
+    # Set 9 to point to 7
+    # Set 11 to point to 9
+    
+    
+    """
+
     return dummy_head.next
 
 
