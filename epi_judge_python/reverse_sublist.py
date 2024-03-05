@@ -31,7 +31,7 @@ def reverse_sublist(L: ListNode, start: int, finish: int) -> Optional[ListNode]:
     # Set temp_node as 9.
     # Set 5 to point to 2
     # Set 9 to point to 7
-    # Set 11 to point to 9
+    # Set 11 to point to 9  
     
     
     """

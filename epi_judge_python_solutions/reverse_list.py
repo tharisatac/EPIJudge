@@ -9,7 +9,9 @@ def reverse_list(head: ListNode) -> ListNode:
     return dummy.next
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     exit(
-        generic_test.generic_test_main('reverse_list.py', 'reverse_list.tsv',
-                                       reverse_list))
+        generic_test.generic_test_main(
+            "reverse_list.py", "reverse_list.tsv", reverse_list
+        )
+    )
