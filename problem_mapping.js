@@ -1278,7 +1278,7 @@ problem_mapping = {
                 "total": 55
             },
             "Python: online_median.py": {
-                "passed": 55,
+                "passed": 0,
                 "total": 55
             }
         },
@@ -1292,7 +1292,7 @@ problem_mapping = {
                 "total": 102
             },
             "Python: k_largest_in_heap.py": {
-                "passed": 0,
+                "passed": 102,
                 "total": 102
             }
         }
