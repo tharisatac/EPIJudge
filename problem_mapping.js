@@ -1350,7 +1350,7 @@ problem_mapping = {
                 "total": 2000
             },
             "Python: int_square_root.py": {
-                "passed": 2000,
+                "passed": 0,
                 "total": 2000
             }
         },
@@ -1364,7 +1364,7 @@ problem_mapping = {
                 "total": 11003
             },
             "Python: real_square_root.py": {
-                "passed": 0,
+                "passed": 11003,
                 "total": 11003
             }
         },
