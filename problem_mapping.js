@@ -1576,7 +1576,7 @@ problem_mapping = {
                 "total": 203
             },
             "Python: longest_contained_interval.py": {
-                "passed": 0,
+                "passed": 203,
                 "total": 203
             }
         },
