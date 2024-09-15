@@ -2016,7 +2016,7 @@ problem_mapping = {
                 "total": 8
             },
             "Python: permutations.py": {
-                "passed": 8,
+                "passed": 2,
                 "total": 8
             }
         },
@@ -2030,7 +2030,7 @@ problem_mapping = {
                 "total": 15
             },
             "Python: power_set.py": {
-                "passed": 0,
+                "passed": 15,
                 "total": 15
             }
         },
