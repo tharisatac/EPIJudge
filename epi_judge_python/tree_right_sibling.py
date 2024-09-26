@@ -3,6 +3,10 @@ import functools
 from test_framework import generic_test
 from test_framework.test_utils import enable_executor_hook
 
+""" 9.15 """
+
+""" Create a tree with a next_level attribute """
+
 
 class BinaryTreeNode:
     def __init__(self, data=None):
@@ -13,8 +17,23 @@ class BinaryTreeNode:
 
 
 def construct_right_sibling(tree: BinaryTreeNode) -> None:
-    # TODO - you fill in here.
-    return
+    """Construct the right sibling."""
+
+    def _populate_next(start_node):
+        while start_node and start_node.left:
+            # Populate the next field.
+            start_node.left.next = start_node.right
+
+            # Populate the next field of the right node.
+            if start_node.next:
+                start_node.right.next = start_node.next.left
+
+            # Keep goin!
+            start_node = start_node.next
+
+    while tree:
+        _populate_next(tree)
+        tree = tree.left
 
 
 def traverse_next(node):
@@ -35,8 +54,7 @@ def clone_tree(original):
     if not original:
         return None
     cloned = BinaryTreeNode(original.data)
-    cloned.left, cloned.right = clone_tree(original.left), clone_tree(
-        original.right)
+    cloned.left, cloned.right = clone_tree(original.left), clone_tree(original.right)
     return cloned
 
 
@@ -46,12 +64,14 @@ def construct_right_sibling_wrapper(executor, tree):
 
     executor.run(functools.partial(construct_right_sibling, cloned))
 
-    return [[n.data for n in traverse_next(level)]
-            for level in traverse_left(cloned)]
+    return [[n.data for n in traverse_next(level)] for level in traverse_left(cloned)]
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     exit(
-        generic_test.generic_test_main('tree_right_sibling.py',
-                                       'tree_right_sibling.tsv',
-                                       construct_right_sibling_wrapper))
+        generic_test.generic_test_main(
+            "tree_right_sibling.py",
+            "tree_right_sibling.tsv",
+            construct_right_sibling_wrapper,
+        )
+    )
